@@ -1,0 +1,13 @@
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  code_runner_job:
+    runs-on: ubuntu-latest
+    name: Code Runner
+    steps:
+    - name: Code Runner Action
+      uses: anuraghazra/code-runner-action@v1
+    env:
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
